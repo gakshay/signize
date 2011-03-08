@@ -6,19 +6,95 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body style="background-color: #e4f3f4;">
-<div align="right" style="margin-right: 200px;">
-<% if current_user %>
- <span>Welcome <%= current_user.email%> | <a href='/users/sign_out'>Logout</a> </span>
-<% else %>
-  <a href="/users/sign_in">Login</a> | <a href="/users/sign_up"> Register </a>
-<% end %>
- 
-</div>
-<div style="width:900px; margin:auto; background-color: #ddd; min-height: 800px; padding: 20px;">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-</div>
+<body>
+		<div class="top-wrapper">
+			<div class="menuhead">
+				<div class="top-inline">
+					<div class="top-img">
+						PeepSign
+					</div>
+					<div class="headerlink">
+		          <ul>
+		              <li>
+										<a class="" href="/"> Home </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+		              <li>
+										<a class="" href="#"> Product </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+									<li>
+										<a class="" href="#"> Blog </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+									<li>
+										<a class="" href="#"> About Us </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+									<li>
+										<a class="" href="#">	Contact Us </a><span>
+									</li>
+		          </ul>
+		      </div>
+					<div class="top-right">
+						<% if current_user %>
+						 <span>Welcome <%= current_user.email%> </span>
+						 <span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+						 <span><a href='/users/sign_out'>Logout</a> </span>
+						<% else %>
+						  <span><a href="/users/sign_in">Login</a> </span>
+							<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+						 	<span><a href="/users/sign_up"> Register </a></span>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	
+		<div class="content-top">
+		  <p class="notice"><%= notice %></p>
+		  <p class="alert"><%= alert %></p>
+		</div>
+		<div class="content-wrapper">
+			<div class="content">
+			  <%= yield %>
+			</div>
+		</div>
+		
+		<div class="footer-top-wrapper">
+			<div class="footer-wrapper">
+				<div class="footer-inline">
+					<div class="footer-img">
+						PeepSign
+					</div>
+					<div class="footerlink">
+		          <ul>
+		              <li>
+										<a class="" href=""> About Us </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+		              <li>
+										<a class="" href="#"> Terms of Use </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+									<li>
+										<a class="" href="#"> Privacy Policy </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+									<li>
+										<a class="" href="#"> FAQ </a>
+										<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
+									</li>
+									<li>
+										<a class="" href="#">	Contact Us </a><span>
+									</li>
+		          </ul>
+		              <p class="footer_txt">Copyright &copy; 2010 PeepSign. All rights reserved.</p>
+		        </div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
 </body>
 </html>
