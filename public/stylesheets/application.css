@@ -81,7 +81,7 @@ div.top-img {
 .headerlink {
 padding: 6px 0px 0px 0px;
 margin-left: 150px;
-width: 452px;
+width: 400px;
 font-size: 18px;
 float: left;
 }
@@ -123,6 +123,7 @@ padding: 3px 0px 0px 0px;
 
 .top-right{
 	float: right;
+	color: white;
 }
 .top-right span a{
 	color: white;
