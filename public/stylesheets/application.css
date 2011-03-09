@@ -220,3 +220,17 @@ color: white;
 .content {
 	padding: 20px;
 }
+.content-top .notice{
+	text-align: center;
+	background-color: #C2ECFC;
+	color: #414141;
+	padding: 5px;
+	border: 1px solid #4CA5CC;
+}
+.content-top .alert{
+	text-align: center;
+	background-color: #FF885F;
+	color: #414141;
+	padding: 5px;
+}
+.right_user_links{float: right;}

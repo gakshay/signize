@@ -33,7 +33,7 @@ module Signature
     # JavaScript files you want as :defaults (application.js is always included).
     #config.action_view.javascript_expansions[:defaults] = %w()
     if Rails.env.production? 
-      config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min railsapplication) 
+      config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery-ui.min rails application) 
     else 
       config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui rails application) 
     end
