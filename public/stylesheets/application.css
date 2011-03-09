@@ -233,4 +233,44 @@ color: white;
 	color: #414141;
 	padding: 5px;
 }
-.right_user_links{float: right;}
+.right_user_links{float: right; margin-top: 10px;}
+.my_signature_link{float: left; margin-right: 10px;}
+.create_new_signature{float: left;}
+
+/* signature */
+
+
+.grey{color: #aaa;}
+.bold{font-weight: bold; color: #777;}
+.ten{font-size: 10px;}
+.nine{font-size: 9px;}
+.eight{font-size: 8px;}
+.twelve{font-size: 12px;}
+.heading{ font-size: 24px;}
+.yellow{color: yellow;}
+.border{ border: 1px solid #E5E5E5;}
+.sixteen{font-size: 16px;}
+.absolute{position: absolute;}
+.right{float: right;}
+.left{float: left;}
+
+.vsign_wrapper{
+	min-width: 200px;
+	min-height: 200px;
+	margin: auto;
+	width: 700px;
+	border: 1px solid #ddd;
+}
+
+.vsign_wrapper a{
+	text-decoration: none;
+}
+
+.vsign_content{
+	background-color: #EDF6FA;
+	border-top: 1px solid #E5E5E5;
+	min-height: 20px;
+	width: 300px;
+	height: 100px;
+	padding: 10px;
+}

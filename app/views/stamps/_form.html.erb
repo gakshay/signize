@@ -10,23 +10,50 @@
       </ul>
     </div>
   <% end %>
+	
+	
+	<div id="vsign_wrapper" class="vsign_wrapper resizable">
+		<div class="vsign_top">
+		</div>
+		
+			<div id="vsign_content" class="vsign_content resizable draggable absolute">
+			
+				<div id="vsign_email" class="vsign_email draggable absolute ten">
+					<%= current_user.email%>
+				</div>
+				<div id="vsign_links" class="vsign_links">
+				
+				</div>
+				<div class="vsign_powered absolute" style="bottom: -15px; ">
+					<a href="#"><span class="grey eight">signature powered by</span></a>
+					<a href="#"><span class="grey nine bold">PeepSign</span></a>
+				</div>
+			</div>
+			
+		<div class="clear"></div>
+	
+		
+		<div class="vsign_bottom">
+			
+		</div>
+		<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1001; "></div>
+		
+	</div>
+	
+	
+	
+	
+	
+  <%= f.hidden_field :email, :value => current_user.email %></p>
+	
+	
+	<%#= render :partial => 'stamp_email' %>
 
-  <p><%= f.label :label %><br />
-  <%= f.text_field :label %></p>
-
-  <p><%= f.label :name %><br />
-  <%= f.text_field :name %></p>
-
-  <p><%= f.label :phone %><br />
-  <%= f.text_field :phone %></p>
-
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
-
-  <p><%= f.label :urls %><br />
-  <%= f.text_area :urls %></p>
-  
-  <div class="actions">
-    <%= f.submit %>
+  <%#= render :partial => 'stamp_review' %>
+	<br>
+	<br>
+  <div class="actions right">
+    <%= f.submit%>
   </div>
+	<div class="clear"></div>
 <% end %>
