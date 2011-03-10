@@ -37,6 +37,11 @@ $(function() {
 				placeElement(name, name_settings)
 			}
 			
+			var mobile = $("#vsign_mobile");
+			var mobile_settings = jQuery.parseJSON($("#settings_stamp_mobile").val());
+			if (mobile && mobile_settings){
+				placeElement(mobile, mobile_settings)
+			}
 			
 		}
 	});
@@ -44,12 +49,12 @@ $(function() {
 	$('.editable').editable(function(value, settings) { 
 			 $(this).text(value);
 			 $("#stamp_name").val(value);
-	     console.log(value);
 	     console.log(settings);
 	     return(value);
 	  }, { 
 	     type    : 'text',
 			 onblur  : 'submit',
+			 width	 : "100"
 	 });
 	
 	
@@ -57,6 +62,7 @@ $(function() {
 		$("#settings_stamp_email").val($.toJSON($("#vsign_email").data("css")));
 		$("#settings_stamp_content").val($.toJSON($("#vsign_content").data("css")));
 		$("#settings_stamp_name").val($.toJSON($("#vsign_name").data("css")));
+		$("#settings_stamp_mobile").val($.toJSON($("#vsign_mobile").data("css")));
 	  //e.preventDefault();
 	});
 

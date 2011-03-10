@@ -23,6 +23,9 @@
 			<div id="vsign_email" class="vsign_email draggable absolute ten">
 				<%= current_user.email%>
 			</div>
+			<br>
+			<div id="vsign_mobile" class="vsign_name draggable absolute ten editable"><%= @stamp.mobile.blank? ? "Enter mobile number" : @stamp.mobile %></div>
+			<br>
 			<div id="vsign_links" class="vsign_links">
 			
 			</div>
@@ -48,10 +51,12 @@
 	
   <%= f.hidden_field :email, :value => current_user.email %></p>
   <%= f.hidden_field :name, :value => @stamp.name %></p>
+  <%= f.hidden_field :mobile, :value => @stamp.mobile %></p>
 
-	<%= hidden_field :settings, :stamp_email, :value => @stamp.setting.settings["stamp_email"] %>
-	<%= hidden_field :settings, :stamp_content, :value => @stamp.setting.settings["stamp_content"] %>
-	<%= hidden_field :settings, :stamp_name, :value => @stamp.setting.settings["stamp_name"] %>
+	<%= hidden_field :settings, :stamp_email, :value => (@stamp.setting.settings["stamp_email"] unless @stamp.setting.blank?)%>
+	<%= hidden_field :settings, :stamp_content, :value => (@stamp.setting.settings["stamp_content"] unless @stamp.setting.blank?) %>
+	<%= hidden_field :settings, :stamp_name, :value => (@stamp.setting.settings["stamp_name"] unless @stamp.setting.blank?) %>
+	<%= hidden_field :settings, :stamp_mobile, :value => (@stamp.setting.settings["stamp_mobile"] unless @stamp.setting.blank?) %>
 	
 	<%#= render :partial => 'stamp_email' %>
 
