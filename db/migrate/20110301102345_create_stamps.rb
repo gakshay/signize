@@ -8,6 +8,7 @@ class CreateStamps < ActiveRecord::Migration
       t.string :phone
       t.string :mobile
       t.string :faxno
+      t.string :promotion_text
       t.integer :template
       t.string :company
       t.string :designation, :limit => 100
@@ -19,8 +20,8 @@ class CreateStamps < ActiveRecord::Migration
       t.text :data
       t.timestamps
     end
-    add_index :stamps, :email, :unique => true
-    add_index :stamps, :user_id, :unique => true
+    add_index :stamps, :email
+    add_index :stamps, :user_id
   end
 
   def self.down

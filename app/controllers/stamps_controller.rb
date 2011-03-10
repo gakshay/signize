@@ -45,6 +45,7 @@ class StampsController < ApplicationController
 
     respond_to do |format|
       if @stamp.save
+        @settings = StampSetting.create(:stamp_id => @stamp.id, :settings => JSON.parse(params[:settings].to_json))
         format.html { redirect_to(@stamp, :notice => 'Stamp was successfully created.') }
         format.xml  { render :xml => @stamp, :status => :created, :location => @stamp }
       else
@@ -61,6 +62,7 @@ class StampsController < ApplicationController
 
     respond_to do |format|
       if @stamp.update_attributes(params[:stamp])
+        @settings = @stamp.setting.update_attributes(:settings => JSON.parse(params[:settings].to_json))
         format.html { redirect_to(@stamp, :notice => 'Stamp was successfully updated.') }
         format.xml  { head :ok }
       else

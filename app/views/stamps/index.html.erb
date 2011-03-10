@@ -1,3 +1,10 @@
 <h1 class="heading bold">Listing Signatures</h1>
 <br>
 <br>
+<% @stamps.each do |stamp| %>
+	<%= stamp.inspect %>
+
+	<%= link_to 'Edit', edit_stamp_path(stamp) %> |
+	<%= link_to 'Back', stamps_path %>
+	<br>
+<% end %>

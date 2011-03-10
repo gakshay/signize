@@ -16,19 +16,21 @@
 		<div class="vsign_top">
 		</div>
 		
-			<div id="vsign_content" class="vsign_content resizable draggable absolute">
-			
-				<div id="vsign_email" class="vsign_email draggable absolute ten">
-					<%= current_user.email%>
-				</div>
-				<div id="vsign_links" class="vsign_links">
-				
-				</div>
-				<div class="vsign_powered absolute" style="bottom: -15px; ">
-					<a href="#"><span class="grey eight">signature powered by</span></a>
-					<a href="#"><span class="grey nine bold">PeepSign</span></a>
-				</div>
+		<div id="vsign_content" class="vsign_content resizable draggable absolute">
+		
+			<div id="vsign_name" class="vsign_name draggable absolute ten editable"><%= @stamp.name.blank? ? "Enter full name" : @stamp.name%></div>
+			<br>
+			<div id="vsign_email" class="vsign_email draggable absolute ten">
+				<%= current_user.email%>
 			</div>
+			<div id="vsign_links" class="vsign_links">
+			
+			</div>
+			<div class="vsign_powered absolute" style="bottom: -15px; ">
+				<a href="#"><span class="grey eight">signature powered by</span></a>
+				<a href="#"><span class="grey nine bold">PeepSign</span></a>
+			</div>
+		</div>
 			
 		<div class="clear"></div>
 	
@@ -45,14 +47,18 @@
 	
 	
   <%= f.hidden_field :email, :value => current_user.email %></p>
-	
+  <%= f.hidden_field :name, :value => @stamp.name %></p>
+
+	<%= hidden_field :settings, :stamp_email, :value => @stamp.setting.settings["stamp_email"] %>
+	<%= hidden_field :settings, :stamp_content, :value => @stamp.setting.settings["stamp_content"] %>
+	<%= hidden_field :settings, :stamp_name, :value => @stamp.setting.settings["stamp_name"] %>
 	
 	<%#= render :partial => 'stamp_email' %>
 
   <%#= render :partial => 'stamp_review' %>
 	<br>
 	<br>
-  <div class="actions right">
+  <div id="vsign_submit" class="actions right">
     <%= f.submit%>
   </div>
 	<div class="clear"></div>
