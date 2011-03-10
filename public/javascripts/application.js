@@ -47,10 +47,12 @@ $(function() {
 	});
 	
 	$('.editable').editable(function(value, settings) { 
-			 $(this).text(value);
-			 $("#stamp_name").val(value);
-	     console.log(settings);
-	     return(value);
+			$(this).text(value);
+			var id_array = $(this).attr("id").split("_");
+			var ele = "#stamp_" + id_array[id_array.length - 1]; 
+			$(ele).val(value);
+			//console.log(settings);
+			return(value);
 	  }, { 
 	     type    : 'text',
 			 onblur  : 'submit',

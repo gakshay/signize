@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-<%= @stamp.inspect %>
+
+<%= render :partial => 'show_item' %>
 
 <%= link_to 'Edit', edit_stamp_path(@stamp) %> |
 <%= link_to 'Back', stamps_path %>
