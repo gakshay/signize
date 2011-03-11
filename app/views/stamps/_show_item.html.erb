@@ -1,18 +1,18 @@
-<div id="vsign_wrapper" class="vsign_wrapper">
-	<div class="vsign_top">
+<div id="vsign_wrapper_<%= @stamp.id %>" class="vsign_wrapper" style="position: relative;">
+	<div class="vsign_top_<%= @stamp.id %>">
 	</div>
 	
-	<div id="vsign_content" class="vsign_content absolute">
+	<div id="vsign_content_<%= @stamp.id %>" class="vsign_content absolute" data-css="<%= @stamp.setting.settings['stamp_content'] %>">
 	
-		<div id="vsign_name" class="vsign_name ten"><%= @stamp.name.blank? ? "Enter full name" : @stamp.name%></div>
+		<div id="vsign_name_<%= @stamp.id %>" class="vsign_name ten absolute" data-css="<%= @stamp.setting.settings['stamp_name'] %>"><%= @stamp.name.blank? ? "Enter full name" : @stamp.name%></div>
 		<br>
-		<div id="vsign_email" class="vsign_email absolute">
+		<div id="vsign_email_<%= @stamp.id %>" class="vsign_email absolute" data-css="<%= @stamp.setting.settings['stamp_email'] %>">
 			<%= current_user.email%>
 		</div>
 		<br>
-		<div id="vsign_mobile" class="vsign_name absolute ten"><%= @stamp.mobile.blank? ? "Enter mobile number" : @stamp.mobile %></div>
+		<div id="vsign_mobile_<%= @stamp.id %>" class="vsign_name absolute ten" data-css="<%= @stamp.setting.settings['stamp_mobile'] %>"><%= @stamp.mobile.blank? ? "Enter mobile number" : @stamp.mobile %></div>
 		<br>
-		<div id="vsign_links" class="vsign_links">
+		<div id="vsign_links_<%= @stamp.id %>" class="vsign_links">
 		
 		</div>
 		<div class="vsign_powered absolute" style="bottom: -15px; ">
@@ -24,7 +24,14 @@
 	<div class="clear"></div>
 
 	
-	<div class="vsign_bottom">
+	<div class="vsign_bottom_<%= @stamp.id %>">
 		
 	</div>	
 </div>
+
+<script type="text/javascript" charset="utf-8">
+	showElementPosition($("#vsign_content_<%= @stamp.id %>"));
+	showElementPosition($("#vsign_name_<%= @stamp.id %>"));
+	showElementPosition($("#vsign_email_<%= @stamp.id %>"));
+	showElementPosition($("#vsign_mobile_<%= @stamp.id %>"));
+</script>

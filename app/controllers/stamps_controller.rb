@@ -15,7 +15,7 @@ class StampsController < ApplicationController
   # GET /stamps/1.xml
   def show
     @stamp = current_user.stamps.find(params[:id])
-
+    @css = @stamp.setting.settings
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @stamp }

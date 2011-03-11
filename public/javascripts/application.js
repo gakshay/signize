@@ -19,13 +19,13 @@ $(function() {
 			//console.log(ui.helper.data());
 		},
 		create: function(event, ui){
-			var content = $(".vsign_content");
+			var content = $("#vsign_content");
 			var content_settings = jQuery.parseJSON($("#settings_stamp_content").val());
 			if (content && content_settings){
 				placeElement(content, content_settings)
 			}
 			
-			var email = $(".vsign_email");
+			var email = $("#vsign_email");
 			var email_settings = jQuery.parseJSON($("#settings_stamp_email").val());
 			if (email && email_settings){
 				placeElement(email, email_settings)
@@ -95,11 +95,16 @@ function setCssSize(element){
 }
 
 function placeElement(element, settings){
+	console.log(element);
 	element.css(settings.position);
 	element.css(settings.size);
 	setDataPosition(element, settings.position);
 	setDataSize(element, settings.size);
 	setCssPosition(element);
 	setCssSize(element);
+}
+
+function showElementPosition(element){
+	placeElement(element, element.data("css"));
 }
 
