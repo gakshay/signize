@@ -1,0 +1,21 @@
+<h1>Listing company_stamps</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @company_stamps.each do |company_stamp| %>
+  <tr>
+    <td><%= link_to 'Show', company_stamp %></td>
+    <td><%= link_to 'Edit', edit_company_stamp_path(company_stamp) %></td>
+    <td><%= link_to 'Destroy', company_stamp, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Company stamp', new_company_stamp_path %>

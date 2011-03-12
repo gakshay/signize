@@ -5,14 +5,17 @@ class CreateStamps < ActiveRecord::Migration
       t.string :label, :limit => 100
       t.string :name, :limit => 100
       t.string :email, :limit => 100
-      t.string :phone
-      t.string :mobile
-      t.string :faxno
-      t.string :promotion_text
-      t.integer :template
-      t.string :company
+      t.string :mobile, :limit => 100
+      t.string :company, :limit => 150
+      t.string :domain, :limit => 100
       t.string :designation, :limit => 100
-      t.string :address, :limit => 100
+      t.string :landline, :limit => 100
+      t.string :faxno, :limit => 100
+      t.string :promotion_text, :limit => 100
+      t.string :promotion_url, :limit => 100
+      t.integer :promotion_image      
+      t.integer :template
+      t.text :address, :limit => 100
       t.string :country, :limit => 100
       t.text :urls
       t.text :social_urls

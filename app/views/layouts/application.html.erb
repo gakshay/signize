@@ -37,14 +37,13 @@
 	          </ul>
 	      </div>
 				<div class="top-right">
-					<% if current_user %>
-					 <span><%= current_user.email%> </span>
-					 <span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
-					 <span><a href='/users/sign_out'>Logout</a> </span>
+					<% if user_signed_in? %>  
+				    <%= current_user.email %> |
+				    <span><%= link_to "Sign out", destroy_user_session_path %></span>
 					<% else %>
-					  <span><a href="/users/sign_in">Login</a> </span>
+					  <span><%= link_to "Login", new_user_session_url %></span>
 						<span><img src="/images/footer-seperator.gif" height="12px" width="2px" title="" /></span>
-					 	<span><a href="/users/sign_up"> Register </a></span>
+					 	<span><%= link_to "Register", new_user_registration_url %></span>
 					<% end %>
 				</div>
 			</div>

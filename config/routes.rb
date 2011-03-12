@@ -1,9 +1,14 @@
 Signature::Application.routes.draw do
+  resources :company_stamps
+
   resources :stamps
 
   get "home/index"
 
-  devise_for :users
+  devise_for :users, :path_names => {:sign_up => "register", :sign_in => "login", :sign_out => "logout"}
+  namespace :company do
+    resources :users # Have the admin manage them here.
+  end
   root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
