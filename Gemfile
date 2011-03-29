@@ -9,6 +9,9 @@ gem 'mysql2'
 gem "jquery-rails"
 gem "devise"
 gem "representative"
+gem "premailer"
+gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
