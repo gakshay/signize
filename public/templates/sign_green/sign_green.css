@@ -2,12 +2,14 @@
 	background-color: #98D147;
 	font-size: 14px;
 	color: #fff;
-	width: 400px;
+	width: 420px;
 }
 
 .sig_col_one{
 	height: 100px;
 	border: 1px dotted #aaa;
+	font-size: 12px;
+	padding: 5px;
 }
 
 .sig_col_two{
@@ -15,6 +17,8 @@
 	width: 310px;
 	height: 200px;
 	border: 1px dotted #aaa;
+	font-size: 12px;
+	padding: 5px;
 }
 
 .sig_col_three{
@@ -22,4 +26,6 @@
 	width: 80px;
 	height: 200px;
 	border: 1px dotted #aaa;
+	font-size: 12px;
+	padding: 5px;
 }
