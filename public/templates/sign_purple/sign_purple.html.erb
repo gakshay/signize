@@ -1,4 +1,4 @@
-<div class="sig_boundary" style="background-color: #373737; font-size: 18px; color: #fff;"> <!-- signature boundary -->
+<div class="sig_boundary" style="background-color: #373737; font-size: 18px; color: #fff; width: 910px; height: 200px;"> <!-- signature boundary -->
 
   <div class="sig_top">
   </div>
@@ -7,21 +7,23 @@
   </div>
 
   <div class="sig_wrapper">
-    <div class="sig_col_one"> 
+    <div class="sig_col_one" style="float: left; width: 300px; height: 200px; border: 1px dotted #aaa;"> 
       First Column
       <%#= ckeditor_textarea("signature", "name", :width => '100%', :height => '200px') %>
       <%#= name %>
       <%#= email %>
     </div>
 
-    <div class="sig_col_two">
+    <div class="sig_col_two" style="float: left; width: 300px; height: 200px; border: 1px dotted #aaa;">
       second column
     </div>
 
-    <div class="sig_col_three">
-      thirs column
+    <div class="sig_col_three" style="width: 300px; height: 200px; float: left; border: 1px dotted #aaa;">
+      third column
     </div>
+    <div style="clear: both;"></div>
   </div>
+  <div style="clear: both;"></div>
   
   <div class="sig_right" style="float: right;">
   </div>

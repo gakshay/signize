@@ -2,4 +2,27 @@
 	background-color: #373737;
 	font-size: 18px;
 	color: #fff;
+	width: 910px;
+	height: 200px;
+}
+
+.sig_col_one{
+	float: left;
+	width: 300px;
+	height: 200px;
+	border: 1px dotted #aaa;
+}
+
+.sig_col_two{
+	float: left;
+	width: 300px;
+	height: 200px;
+		border: 1px dotted #aaa;
+}
+
+.sig_col_three{
+	width: 300px;
+	height: 200px;
+	float:  left;
+	border: 1px dotted #aaa;
 }
