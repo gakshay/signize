@@ -4,10 +4,6 @@ class StampsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @stamps = current_user.stamps.all
-    @files = []
-    Dir.glob( File.join( Rails.root.to_s , 'public' ,'templates', 'sign_*', "*.html.erb") ).each do |template|
-      @files << template
-    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @stamps }
@@ -32,6 +28,7 @@ class StampsController < ApplicationController
     session[:sign_params] ||= {}
     @stamp = current_user.stamps.new(session[:sign_params])
     @stamp.current_step = session[:sign_step]
+    @template_name = session[:sign_template]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @stamp }
@@ -47,8 +44,10 @@ class StampsController < ApplicationController
   # POST /stamps.xml
   def create
     session[:sign_params].deep_merge!(params[:stamp]) if params[:stamp]
+    session[:sign_template] = params[:stamp_template] if params[:stamp_template]
     @stamp = current_user.stamps.new(session[:sign_params])
     @stamp.current_step = session[:sign_step]
+    @template_name = session[:sign_template]
     
     if @stamp.valid?
       if params[:back_button]
@@ -62,7 +61,7 @@ class StampsController < ApplicationController
     end
     respond_to do |format|
       unless @stamp.new_record?
-        @settings = StampSetting.create(:stamp_id => @stamp.id, :settings => JSON.parse(params[:settings].to_json))
+        #@settings = StampSetting.create(:stamp_id => @stamp.id, :settings => JSON.parse(params[:settings].to_json))
         session[:sign_step] = session[:sign_params] = nil
         format.html { redirect_to(@stamp, :notice => 'Stamp was successfully created.') }
         format.xml  { render :xml => @stamp, :status => :created, :location => @stamp }

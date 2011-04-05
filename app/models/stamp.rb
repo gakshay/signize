@@ -29,10 +29,14 @@ class Stamp < ActiveRecord::Base
 		current_step == steps.last
 	end
 	
-	def templates
+	def self.templates
 		@templates = []
     Dir.glob( File.join( Rails.root.to_s , 'public' ,'templates', 'sign_*', "*.html.erb") ).each do |template|
       @templates << template
     end
+	end
+	
+	def self.template(name)
+		File.join( Rails.root.to_s , 'public' ,'templates', "#{name}", "#{name}.html.erb") 
 	end
 end

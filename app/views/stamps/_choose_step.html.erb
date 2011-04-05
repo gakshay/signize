@@ -1,8 +1,12 @@
 <h1 class="heading bold">Choose the Signature Template</h1>
 <br />
 <br />
-<% @stamp.templates.each do |file| %>
-	<%= render :file => file, :object =>  @stamp %>
+<% Stamp.templates.each do |file| %>
+
+	<span>
+		<%= radio_button_tag "stamp_template", File.basename(file,".html.erb") %>
+		<%= render :file => file, :object =>  @stamp %>
+	<span>
 	<br />
 	<hr />
 	<br />

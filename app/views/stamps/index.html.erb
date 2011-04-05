@@ -2,12 +2,6 @@
 <br>
 <br>
 <% @stamps.each do |@stamp| %>
-	<% @files.each do |file| %>
-	<%= render :file => file, :object =>  @stamp %>
-	<br />
-	<hr />
-	<br />
-	<% end %>
 	<br>
 	<%= render :partial => 'show_item' %>
 	<br>
