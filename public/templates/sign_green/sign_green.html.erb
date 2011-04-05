@@ -1,3 +1,4 @@
+
 <div class="sig_boundary" style="background-color: #98D147; font-size: 14px; color: #fff; width: 420px;"> <!-- signature boundary -->
 
   <div class="sig_top">
@@ -14,35 +15,35 @@
       </div>
     
       <div class="sig_name">
-        First Name last Name
+        <%= @stamp.name.blank? ? "Your Name" : @stamp.name %>
       </div>
       
       <div class="sig_designation">
-        Your Designation
+        <%= @stamp.designation.blank? ? "Your Designation" : @stamp.designation %>
       </div>
       
       <div class="sig_company">
-        Company Name
+        <%= @stamp.company.blank? ? "Company Name" : @stamp.company %>
       </div>
       
       <div class="sig_mobile">
-        Mobile Number
+        <%= @stamp.mobile.blank? ? "Mobile Number" : @stamp.mobile %>
       </div>
       
       <div class="sig_email">
-        email@address.com
+        <%= @stamp.email.blank? ? "email@address.com" : @stamp.email %>
       </div>
       
     </div>
 
-    <div class="sig_col_two" style="float: left; width: 310px; padding: 5px; height: 200px; border: 1px dotted #aaa; font-size: 12px;">
+    <div class="sig_col_two" style="float: left; width: 310px; padding: 5px; height: 80px; border: 1px dotted #aaa; font-size: 12px;">
       <div class="sig_message_board">
         Some Clickable Message to display
       </div>
   
     </div>
 
-    <div class="sig_col_three" style="float: right; width: 80px; padding: 5px; height: 200px; border: 1px dotted #aaa; font-size: 12px;">
+    <div class="sig_col_three" style="float: right; width: 80px; padding: 5px; height: 80px; border: 1px dotted #aaa; font-size: 12px;">
       <ul class="sign_site_navigation_links">
         <li> <a href="#"> Home </a> </li>
         <li> <a href="#"> Product </a> </li>
@@ -61,7 +62,6 @@
 
   <div class="sig_bottom">
     <div class="sign_disclaimer">
-      Disclaimer will come here
     </div>
   </div>
 

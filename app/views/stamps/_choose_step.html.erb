@@ -1,0 +1,9 @@
+<h1 class="heading bold">Choose the Signature Template</h1>
+<br />
+<br />
+<% @stamp.templates.each do |file| %>
+	<%= render :file => file, :object =>  @stamp %>
+	<br />
+	<hr />
+	<br />
+<% end %>

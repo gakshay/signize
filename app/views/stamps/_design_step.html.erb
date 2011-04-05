@@ -1,0 +1,52 @@
+<h1 class="heading bold">Design your signature </h1>
+<div id="vsign_wrapper" class="vsign_wrapper resizable">
+		<div class="vsign_top">
+		</div>
+		
+		<div id="vsign_content" class="vsign_content resizable draggable absolute">
+		
+			<div id="vsign_name" class="vsign_name draggable absolute ten editable"><%= @stamp.name.blank? ? "Enter full name" : @stamp.name%></div>
+			<br>
+			<div id="vsign_email" class="vsign_email draggable absolute ten">
+				<%= @stamp.email%>
+			</div>
+			<br>
+			<div id="vsign_mobile" class="vsign_name draggable absolute ten editable"><%= @stamp.mobile.blank? ? "Enter mobile number" : @stamp.mobile %></div>
+			<br>
+			<div id="vsign_links" class="vsign_links">
+			
+			</div>
+			<!-- <div class="vsign_powered absolute" style="bottom: -15px; ">
+							<a href="#"><span class="grey eight">signature powered by</span></a>
+							<a href="#"><span class="grey nine bold">PeepSign</span></a>
+						</div> -->
+		</div>
+			
+		<div class="clear"></div>
+	
+		
+		<div class="vsign_bottom">
+			
+		</div>
+		<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1001; "></div>
+		
+	</div>
+	
+	
+	
+	
+	
+  <%= f.hidden_field :email, :value => @stamp.email %></p>
+  <%= f.hidden_field :name, :value => @stamp.name %></p>
+  <%= f.hidden_field :mobile, :value => @stamp.mobile %></p>
+
+	<%= hidden_field :settings, :stamp_email, :value => (@stamp.setting.settings["stamp_email"] unless @stamp.setting.blank?)%>
+	<%= hidden_field :settings, :stamp_content, :value => (@stamp.setting.settings["stamp_content"] unless @stamp.setting.blank?) %>
+	<%= hidden_field :settings, :stamp_name, :value => (@stamp.setting.settings["stamp_name"] unless @stamp.setting.blank?) %>
+	<%= hidden_field :settings, :stamp_mobile, :value => (@stamp.setting.settings["stamp_mobile"] unless @stamp.setting.blank?) %>
+	<br>
+	<br>
+  <div id="vsign_submit" class="actions right">
+    <%#= f.submit%>
+  </div>
+	<div class="clear"></div>

@@ -4,7 +4,10 @@ class StampsController < ApplicationController
   before_filter :authenticate_user!
   def index
     @stamps = current_user.stamps.all
-
+    @files = []
+    Dir.glob( File.join( Rails.root.to_s , 'public' ,'templates', 'sign_*', "*.html.erb") ).each do |template|
+      @files << template
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @stamps }
@@ -26,8 +29,9 @@ class StampsController < ApplicationController
   # GET /stamps/new
   # GET /stamps/new.xml
   def new
-    @stamp = current_user.stamps.new
-
+    session[:sign_params] ||= {}
+    @stamp = current_user.stamps.new(session[:sign_params])
+    @stamp.current_step = session[:sign_step]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @stamp }
@@ -42,15 +46,28 @@ class StampsController < ApplicationController
   # POST /stamps
   # POST /stamps.xml
   def create
-    @stamp = current_user.stamps.new(params[:stamp])
-
+    session[:sign_params].deep_merge!(params[:stamp]) if params[:stamp]
+    @stamp = current_user.stamps.new(session[:sign_params])
+    @stamp.current_step = session[:sign_step]
+    
+    if @stamp.valid?
+      if params[:back_button]
+        @stamp.previous_step
+      elsif @stamp.last_step?
+        @stamp.save #if @order.all_valid?
+      else
+        @stamp.next_step
+      end
+      session[:sign_step] = @stamp.current_step
+    end
     respond_to do |format|
-      if @stamp.save
+      unless @stamp.new_record?
         @settings = StampSetting.create(:stamp_id => @stamp.id, :settings => JSON.parse(params[:settings].to_json))
+        session[:sign_step] = session[:sign_params] = nil
         format.html { redirect_to(@stamp, :notice => 'Stamp was successfully created.') }
         format.xml  { render :xml => @stamp, :status => :created, :location => @stamp }
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to(:action => "new") }
         format.xml  { render :xml => @stamp.errors, :status => :unprocessable_entity }
       end
     end

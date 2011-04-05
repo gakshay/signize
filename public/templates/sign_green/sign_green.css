@@ -15,7 +15,7 @@
 .sig_col_two{
 	float: left;
 	width: 310px;
-	height: 200px;
+	height: 80px;
 	border: 1px dotted #aaa;
 	font-size: 12px;
 	padding: 5px;
@@ -24,7 +24,7 @@
 .sig_col_three{
 	float: right;
 	width: 80px;
-	height: 200px;
+	height: 80px;
 	border: 1px dotted #aaa;
 	font-size: 12px;
 	padding: 5px;

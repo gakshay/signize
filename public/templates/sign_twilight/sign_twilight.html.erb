@@ -1,3 +1,4 @@
+
 <div class="sig_boundary" style="background-color: #bedce7; font-size: 24px; width: 520px;"> <!-- signature boundary -->
 
   <div class="sig_top">
@@ -14,23 +15,23 @@
       </div>
     
       <div class="sig_name">
-        First Name last Name
+        <%= @stamp.name.blank? ? "Your Name" : @stamp.name %>
       </div>
       
       <div class="sig_designation">
-        Your Designation
+        <%= @stamp.designation.blank? ? "Your Designation" : @stamp.designation %>
       </div>
       
       <div class="sig_company">
-        Company Name
+        <%= @stamp.company.blank? ? "Company Name" : @stamp.company %>
       </div>
       
       <div class="sig_mobile">
-        Mobile Number
+        <%= @stamp.mobile.blank? ? "Mobile Number" : @stamp.mobile %>
       </div>
       
       <div class="sig_email">
-        email@address.com
+        <%= @stamp.email.blank? ? "email@address.com" : @stamp.email %>
       </div>
       
     </div>
@@ -61,7 +62,6 @@
 
   <div class="sig_bottom">
     <div class="sign_disclaimer">
-      Disclaimer will come here
     </div>
   </div>
 
