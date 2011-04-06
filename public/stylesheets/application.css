@@ -54,6 +54,13 @@ body {
 	clear: both;
 }
 
+hr{
+color: #62625D;
+height: 1px;
+}
+
+
+
 div.wrapper {
 	width:  980px;
 	margin: auto;
@@ -273,4 +280,10 @@ color: white;
 	height: 100px;
 	padding: 10px;
 	background: transparent url(/images/green-tpl.png) no-repeat;
+}
+
+.outer{
+margin: 10px;
+padding: 10px;
+border-top: 1px solid #62625D;
 }
