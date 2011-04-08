@@ -3,6 +3,6 @@
 <br />
 <p>
 <%= f.label :email, "Enter your email address" %> <br />
-<%= f.text_field :email, :value => current_user.email %>
+<%= f.text_field :email, :value => @stamp.email.blank? ? current_user.email : @stamp.email %>
 <br />
 </p>

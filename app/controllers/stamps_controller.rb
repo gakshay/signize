@@ -61,7 +61,7 @@ class StampsController < ApplicationController
     end
     respond_to do |format|
       unless @stamp.new_record?
-        #@settings = StampSetting.create(:stamp_id => @stamp.id, :settings => JSON.parse(params[:settings].to_json))
+        @settings = StampSetting.create(:stamp_id => @stamp.id, :settings => JSON.parse(params[:settings].to_json))
         session[:sign_step] = session[:sign_params] = nil
         format.html { redirect_to(@stamp, :notice => 'Stamp was successfully created.') }
         format.xml  { render :xml => @stamp, :status => :created, :location => @stamp }

@@ -1,4 +1,22 @@
 <h1 class="heading bold">Design your Signature </h1>
 <br />
 <br />
-<%= render :file => Stamp.template(@template_name), :object =>  @stamp %>
+<div id="stamp_design" >
+	<%= render :file => Stamp.template(@template_name), :object =>  @stamp %>
+	<br />
+	<br />
+	<%= hidden_field :settings,  :stamp %>
+	<%= hidden_field :settings,  :html %>
+	<%= hidden_field :stamp,  :name %>
+	<%= hidden_field :stamp, :designation %>
+	<%= hidden_field :stamp, :company %>
+	<%= hidden_field :stamp, :mobile %>
+	<%= hidden_field :stamp, :email %>
+
+
+</div>
+<div style="position: relative;">
+	<a id="text-editor-close-button" class="button" href="#"><span class="label"></span></a>
+	<%= ckeditor_textarea("design", "area", :width => '100%', :height => '80px', :class => "hidden" ) %>
+</div>
+<%= javascript_include_tag "st-editor" %>

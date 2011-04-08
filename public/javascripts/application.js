@@ -61,11 +61,23 @@ $(function() {
 	
 	
 	$('#stamp_submit').click(function(e) {
-		$("#settings_stamp_email").val($.toJSON($("#vsign_email").data("css")));
-		$("#settings_stamp_content").val($.toJSON($("#vsign_content").data("css")));
-		$("#settings_stamp_name").val($.toJSON($("#vsign_name").data("css")));
-		$("#settings_stamp_mobile").val($.toJSON($("#vsign_mobile").data("css")));
-	  //e.preventDefault();
+		if ($("#settings_stamp")){
+			var settings = {}
+			$("[class^=sig_]").each(function(){ 
+				settings[this.className] = $(this).attr('style');
+			});
+			$("#settings_stamp").val($.toJSON(settings));
+		}
+		
+		var elements = ["email", "name", "company", "designation", "mobile"];
+		$.each(elements, function(index, value) { 
+			$("#stamp_design #stamp_" + value).val($(".sig_" + value).text()); 
+		}) 
+		//$("#settings_stamp_email").val($.toJSON($("#vsign_email").data("css")));
+		//$("#settings_stamp_content").val($.toJSON($("#vsign_content").data("css")));
+		//$("#settings_stamp_name").val($.toJSON($("#vsign_name").data("css")));
+		//$("#settings_stamp_mobile").val($.toJSON($("#vsign_mobile").data("css")));
+		//e.preventDefault();
 	});
 
 });
@@ -107,4 +119,3 @@ function placeElement(element, settings){
 function showElementPosition(element){
 	placeElement(element, element.data("css"));
 }
-

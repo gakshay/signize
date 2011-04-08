@@ -10,41 +10,41 @@
   <div class="sig_wrapper">
     <div class="sig_col_one" style="float: left; width: 300px; padding: 5px; height: 200px; border: 1px dotted #aaa; font-size: 12px;"> 
     
-      <div class="sig_logo">
+      <div class="sig_logo sign_text">
         Company Logo
       </div>
     
-      <div class="sig_name">
-        <%= @stamp.name.blank? ? "Your Name" : @stamp.name %>
+      <div class="sig_name sign_text">
+        <%= current_user.name.blank? ? "Your Name" : current_user.name %>
       </div>
       
-      <div class="sig_designation">
-        <%= @stamp.designation.blank? ? "Your Designation" : @stamp.designation %>
+      <div class="sig_designation sign_text">
+        <%= current_user.designation.blank? ? "Your Designation" : current_user.designation %>
       </div>
       
-      <div class="sig_company">
-        <%= @stamp.company.blank? ? "Company Name" : @stamp.company %>
+      <div class="sig_company sign_text">
+        <%= current_user.company.blank? ? "Company Name" : current_user.company %>
       </div>
       
-      <div class="sig_mobile">
-        <%= @stamp.mobile.blank? ? "Mobile Number" : @stamp.mobile %>
+      <div class="sig_mobile sign_text">
+        <%= current_user.mobile.blank? ? "Mobile Number" : current_user.mobile %>
       </div>
       
       <div class="sig_email">
-        <%= @stamp.email.blank? ? "email@address.com" : @stamp.email %>
+        <%= @stamp.email.blank? ? current_user.email.blank? ? "email@address.com" : current_user.email : @stamp.email %>
       </div>
       
     </div>
 
     <div class="sig_col_two" style="float: left; width: 300px; padding: 5px; height: 200px; border: 1px dotted #aaa; font-size: 12px;">
-      <div class="sig_message_board">
+      <div class="sig_message_board sign_image_link">
         Some Clickable Message to display
       </div>
   
     </div>
 
     <div class="sig_col_three" style="width: 300px; padding: 5px; height: 200px; float: left; border: 1px dotted #aaa; font-size: 12px;">
-      <ul class="sign_site_navigation_links">
+      <ul class="sign_site_navigation_links sign_links">
         <li> <a href="#"> Home </a> </li>
         <li> <a href="#"> Product </a> </li>
         <li> <a href="#"> Careers </a> </li>
@@ -61,7 +61,7 @@
   <div style="clear: both;"></div>
 
   <div class="sig_bottom">
-    <div class="sign_disclaimer">
+    <div class="sign_disclaimer sign_text">
     </div>
   </div>
 

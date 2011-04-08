@@ -15,23 +15,23 @@
       </div>
     
       <div class="sig_name sign_text">
-        <%= current_user.name.blank? ? "Your Name" : current_user.name %>
+        <%= @stamp.name %>
       </div>
       
       <div class="sig_designation sign_text">
-        <%= current_user.designation.blank? ? "Your Designation" : current_user.designation %>
+        <%= @stamp.designation %>
       </div>
       
       <div class="sig_company sign_text">
-        <%= current_user.company.blank? ? "Company Name" : current_user.company %>
+        <%= @stamp.company %>
       </div>
       
       <div class="sig_mobile sign_text">
-        <%= current_user.mobile.blank? ? "Mobile Number" : current_user.mobile %>
+        <%= @stamp.mobile %>
       </div>
       
       <div class="sig_email">
-        <%= @stamp.email.blank? ? current_user.email.blank? ? "email@address.com" : current_user.email : @stamp.email %>
+        <%= @stamp.email %>
       </div>
       
     </div>

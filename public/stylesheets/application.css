@@ -287,3 +287,14 @@ margin: 10px;
 padding: 10px;
 border-top: 1px solid #62625D;
 }
+
+#text-editor-close-button {
+    background: url(/javascripts/ckeditor/images/cancelbutton.gif) no-repeat;
+    width: 14px;
+    height: 14px;
+position: absolute;
+float: none;
+margin: 0;
+right: 0px;
+top: 10px;
+}
